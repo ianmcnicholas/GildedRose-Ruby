@@ -96,6 +96,38 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
   end
+
+  context 'Conjured items' do
+    it 'does nothing yet' do
+
+    end
+  end
+
+  context 'extra tests' do
+    it "passes test 1" do
+      items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 15, 20)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].name).to eq "Backstage passes to a TAFKAL80ETC concert"
+      expect(items[0].sell_in).to eq 14
+      expect(items[0].quality).to eq 21
+    end
+    it "passes test 2" do
+      items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 49)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].name).to eq "Backstage passes to a TAFKAL80ETC concert"
+      expect(items[0].sell_in).to eq 9
+      expect(items[0].quality).to eq 50
+    end
+    it "passes test 3" do
+      items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 49)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].name).to eq "Backstage passes to a TAFKAL80ETC concert"
+      expect(items[0].sell_in).to eq 4
+      expect(items[0].quality).to eq 50
+    end
+  end
+
+
   end
 
 end
