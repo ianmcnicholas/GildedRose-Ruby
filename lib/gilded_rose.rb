@@ -14,16 +14,12 @@ class GildedRose
         item
       when item.name == "Aged Brie"
         aged_brie_update
-        quality_control
       when item.name == "Backstage passes to a TAFKAL80ETC concert"
         backstage_pass_update
-        quality_control
-      # when item.name.include?("Conjured")
-      #   p "This is a conjured item"
-      #   normal_update
+      when item.name.include?("Conjured")
+        conjured_update
       else
         normal_update
-        quality_control
       end
     end
   end
@@ -38,6 +34,7 @@ end
     else
       @item.quality += 1
     end
+    quality_control
   end
 
   def backstage_pass_update
@@ -51,6 +48,17 @@ end
     else
       @item.quality += 1
     end
+    quality_control
+  end
+
+  def conjured_update
+    @item.sell_in -= 1
+    if @item.sell_in >= 0
+      @item.quality -= 2
+    else
+      @item.quality -= 4
+    end
+    quality_control
   end
 
   def normal_update
@@ -60,6 +68,7 @@ end
     else
       @item.quality -= 2
     end
+    quality_control
   end
 
   def quality_control
