@@ -32,3 +32,14 @@ I then wrote unit tests to cover the test specifications e.g. "Aged Brie" increa
 Then, when I was content with my refactoring, I added unit tests to allow for code to deal with "Conjured" items, and then the subsequent code for this.
 
 Finally, to implement some form of feature test, I redirected the file `texttest_fixture.rb` which can be run directly in the terminal to show example outputs of the project.
+
+## Concerns ##
+
+From what I could gather, the brief for this test was to refactor the `update_quality()` method, in order to easily add code that dealt with "Conjured" items, and then add this code.  I feel I have certainly achieved this.
+
+However, I am unsure if I have taken a "professional" and / or "best-practice" approach.  I rearranged the file structure to suit my needs, and have done nothing with the `gilded_rose_tests.rb` file.
+
+
+
+
+TO DO FRIDAY - EXTRACT UPDATE METHODS INTO CLASSES e.g. AGEDBRIE_UPDATER, NORMAL_UPDATER, etc.
